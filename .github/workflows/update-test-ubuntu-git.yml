@@ -1,17 +1,18 @@
 name: Publish test-ubuntu-git Container
 
-on:
-  # Use an on demand workflow trigger.  
-  # (Forked copies of actions/checkout won't have permission to update GHCR.io/actions, 
-  #  so avoid trigger events that run automatically.)
-  workflow_dispatch:
-    inputs:
-      publish:
-        description:  'Publish to ghcr.io? (main branch only)'
-        type: boolean
-        required: true
-        default: false
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   # Use an on demand workflow trigger.  
+#   # (Forked copies of actions/checkout won't have permission to update GHCR.io/actions, 
+#   #  so avoid trigger events that run automatically.)
+#   workflow_dispatch:
+#     inputs:
+#       publish:
+#         description:  'Publish to ghcr.io? (main branch only)'
+#         type: boolean
+#         required: true
+#         default: false
+# 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: actions/test-ubuntu-git
